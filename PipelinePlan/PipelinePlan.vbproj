@@ -346,12 +346,12 @@
           <HostItem Name="Sheet10" Code="Sheet10.vb" CanonicalName="Sheet10" DisplayName="备注" Blueprint="Sheet10.Designer.xml" GeneratedCode="Sheet10.Designer.vb" />
           <HostItem Name="Sheet11" Code="Sheet11.vb" CanonicalName="Sheet11" DisplayName="生成" Blueprint="Sheet11.Designer.xml" GeneratedCode="Sheet11.Designer.vb" />
           <HostItem Name="Sheet12" Code="Sheet12.vb" CanonicalName="Sheet12" DisplayName="常用" Blueprint="Sheet12.Designer.xml" GeneratedCode="Sheet12.Designer.vb" />
-          <HostItem Name="Sheet14" Code="Sheet14.vb" CanonicalName="Sheet14" DisplayName="运行" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.vb" />
-          <HostItem Name="Sheet16" Code="Sheet16.vb" CanonicalName="Sheet16" DisplayName="最终" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.vb" />
+          <HostItem Name="Sheet14" Code="Sheet14.vb" CanonicalName="Sheet14" DisplayName="运行方案" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.vb" />
+          <HostItem Name="Sheet16" Code="Sheet16.vb" CanonicalName="Sheet16" DisplayName="下载方案" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.vb" />
           <HostItem Name="Sheet1" Code="Sheet2.vb" CanonicalName="Sheet1" DisplayName="批次" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.vb" />
           <HostItem Name="Sheet3" Code="Sheet3.vb" CanonicalName="Sheet3" DisplayName="计划单" Blueprint="Sheet3.Designer.xml" GeneratedCode="Sheet3.Designer.vb" />
           <HostItem Name="Sheet5" Code="Sheet5.vb" CanonicalName="Sheet5" CanActivate="false" DisplayName="生成1" Blueprint="Sheet5.Designer.xml" GeneratedCode="Sheet5.Designer.vb" />
-          <HostItem Name="Sheet7" Code="Sheet7.vb" CanonicalName="Sheet7" DisplayName="计算(长郴)" Blueprint="Sheet7.Designer.xml" GeneratedCode="Sheet7.Designer.vb" />
+          <HostItem Name="Sheet7" Code="Sheet7.vb" CanonicalName="Sheet7" DisplayName="水力计算" Blueprint="Sheet7.Designer.xml" GeneratedCode="Sheet7.Designer.vb" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.vb" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.vb" />
         </Host>
       </FlavorProperties>
