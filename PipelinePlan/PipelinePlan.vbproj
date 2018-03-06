@@ -11,14 +11,38 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <OfficeApplication>Excel</OfficeApplication>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
     <ProjectGuid>{58C79DB9-D4C8-44D7-B382-34A04FCDC092}</ProjectGuid>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>发布\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>zh-chs</TargetCulture>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <ProductName>PipelinePlan</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>PipelinePlan</FriendlyName>
+    <OfficeApplicationDescription />
+    <SolutionID>7a02a09a-480f-48ef-9375-3a37ffd5377c</SolutionID>
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 和 x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
@@ -58,6 +82,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -121,11 +148,27 @@
     <Import Include="Excel = Microsoft.Office.Interop.Excel" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="Sheet1.Designer.vb">
-      <DependentUpon>Sheet1.Designer.xml</DependentUpon>
+    <None Include="ClassDiagram3.cd" />
+    <None Include="OillList.vb" />
+    <Compile Include="Class2.vb" />
+    <Compile Include="Component1.Designer.vb">
+      <DependentUpon>Component1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Sheet1.vb">
+    <Compile Include="Component1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+    <None Include="VBA\cIntfcList.cls" />
+    <None Include="VBA\cOI_Queue.cls" />
+    <None Include="VBA\cPipeProp.cls" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="myDefine.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Sheet2.Designer.vb">
+      <DependentUpon>Sheet2.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet2.vb">
       <DependentUpon>【编制】计算器.xlsm</DependentUpon>
     </Compile>
     <Compile Include="Sheet10.Designer.vb">
@@ -176,10 +219,10 @@
     <Compile Include="Sheet7.vb">
       <DependentUpon>【编制】计算器.xlsm</DependentUpon>
     </Compile>
-    <Compile Include="Sheet8.Designer.vb">
-      <DependentUpon>Sheet8.Designer.xml</DependentUpon>
+    <Compile Include="Sheet1.Designer.vb">
+      <DependentUpon>Sheet1.Designer.xml</DependentUpon>
     </Compile>
-    <Compile Include="Sheet8.vb">
+    <Compile Include="Sheet1.vb">
       <DependentUpon>【编制】计算器.xlsm</DependentUpon>
     </Compile>
     <Compile Include="ThisWorkbook.Designer.vb">
@@ -199,6 +242,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
@@ -208,6 +252,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PipelinePlan_TemporaryKey.pfx" />
     <None Include="【编制】计算器.xlsm" />
   </ItemGroup>
   <ItemGroup>
@@ -221,13 +266,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sheet1.Designer.xml">
-      <DependentUpon>Sheet1.vb</DependentUpon>
+    <None Include="Sheet2.Designer.xml">
+      <DependentUpon>Sheet2.vb</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sheet8.Designer.xml">
-      <DependentUpon>Sheet8.vb</DependentUpon>
+    <None Include="Sheet1.Designer.xml">
+      <DependentUpon>Sheet1.vb</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -281,23 +326,32 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PipelinePlan_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DF70DB4303BA6FC502C9799345316EC6C72A0D53</ManifestCertificateThumbprint>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="【编制】计算器.xlsm" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="VB" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]【编制】计算器.xlsm&quot;" />
+        <ProjectProperties HostName="【编制】计算器.xlsm" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="VB" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]【编制】计算器.xlsm&quot;" />
         <Host Name="Excel Document" Path=".\【编制】计算器.xlsm">
-          <HostItem Name="Sheet1" Code="Sheet1.vb" CanonicalName="Sheet1" DisplayName="批次" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.vb" />
+          <HostItem Name="Sheet8" Code="Sheet1.vb" CanonicalName="Sheet8" DisplayName="参数" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.vb" />
           <HostItem Name="Sheet10" Code="Sheet10.vb" CanonicalName="Sheet10" DisplayName="备注" Blueprint="Sheet10.Designer.xml" GeneratedCode="Sheet10.Designer.vb" />
           <HostItem Name="Sheet11" Code="Sheet11.vb" CanonicalName="Sheet11" DisplayName="生成" Blueprint="Sheet11.Designer.xml" GeneratedCode="Sheet11.Designer.vb" />
           <HostItem Name="Sheet12" Code="Sheet12.vb" CanonicalName="Sheet12" DisplayName="常用" Blueprint="Sheet12.Designer.xml" GeneratedCode="Sheet12.Designer.vb" />
           <HostItem Name="Sheet14" Code="Sheet14.vb" CanonicalName="Sheet14" DisplayName="运行" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.vb" />
           <HostItem Name="Sheet16" Code="Sheet16.vb" CanonicalName="Sheet16" DisplayName="最终" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.vb" />
+          <HostItem Name="Sheet1" Code="Sheet2.vb" CanonicalName="Sheet1" DisplayName="批次" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.vb" />
           <HostItem Name="Sheet3" Code="Sheet3.vb" CanonicalName="Sheet3" DisplayName="计划单" Blueprint="Sheet3.Designer.xml" GeneratedCode="Sheet3.Designer.vb" />
           <HostItem Name="Sheet5" Code="Sheet5.vb" CanonicalName="Sheet5" CanActivate="false" DisplayName="生成1" Blueprint="Sheet5.Designer.xml" GeneratedCode="Sheet5.Designer.vb" />
           <HostItem Name="Sheet7" Code="Sheet7.vb" CanonicalName="Sheet7" DisplayName="计算(长郴)" Blueprint="Sheet7.Designer.xml" GeneratedCode="Sheet7.Designer.vb" />
-          <HostItem Name="Sheet8" Code="Sheet8.vb" CanonicalName="Sheet8" DisplayName="参数" Blueprint="Sheet8.Designer.xml" GeneratedCode="Sheet8.Designer.vb" />
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.vb" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.vb" />
         </Host>
       </FlavorProperties>

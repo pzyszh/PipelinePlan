@@ -6,7 +6,7 @@ Public Class Sheet7
     End Sub
 
     Private Sub Sheet7_Shutdown() Handles Me.Shutdown
-
+        MsgBox("...")
     End Sub
 
 End Class

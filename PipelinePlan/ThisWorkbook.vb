@@ -1,4 +1,6 @@
 ﻿
+Imports Microsoft.Office.Interop.Excel
+
 Public Class ThisWorkbook
 
     Private Sub ThisWorkbook_Startup() Handles Me.Startup
@@ -9,4 +11,11 @@ Public Class ThisWorkbook
 
     End Sub
 
+
+
+    Private Sub ThisWorkbook_SheetActivate(Sh As Object) Handles Me.SheetActivate
+        If Sh.name="参数" Then
+            Me.Protect()
+        End If
+    End Sub
 End Class

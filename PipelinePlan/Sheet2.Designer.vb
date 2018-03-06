@@ -14,16 +14,18 @@ Option Explicit On
 
 
 '''
-<Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(3),  _
+<Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(2),  _
  Global.System.Security.Permissions.PermissionSetAttribute(Global.System.Security.Permissions.SecurityAction.Demand, Name:="FullTrust")>  _
-Partial Public NotInheritable Class Sheet1
+Partial Public NotInheritable Class Sheet2
     Inherits Microsoft.Office.Tools.Excel.WorksheetBase
+    
+    Friend WithEvents Sheet1_Print_Area As Microsoft.Office.Tools.Excel.NamedRange
     
     '''
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
     Public Sub New(ByVal factory As Global.Microsoft.Office.Tools.Excel.Factory, ByVal serviceProvider As Global.System.IServiceProvider)
-        MyBase.New(factory, serviceProvider, "Sheet8", "Sheet8")
+        MyBase.New(factory, serviceProvider, "Sheet1", "Sheet1")
     End Sub
     
     '''
@@ -32,7 +34,7 @@ Partial Public NotInheritable Class Sheet1
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
     Protected Overrides Sub Initialize()
         MyBase.Initialize
-        Globals.Sheet1 = Me
+        Globals.Sheet2 = Me
         Global.System.Windows.Forms.Application.EnableVisualStyles
         Me.InitializeCachedData
         Me.InitializeControls
@@ -112,6 +114,7 @@ Partial Public NotInheritable Class Sheet1
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
     Private Sub BeginInitialization()
         Me.BeginInit
+        Me.Sheet1_Print_Area.BeginInit
     End Sub
     
     '''
@@ -119,6 +122,7 @@ Partial Public NotInheritable Class Sheet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
     Private Sub EndInitialization()
+        Me.Sheet1_Print_Area.EndInit
         Me.EndInit
     End Sub
     
@@ -127,6 +131,7 @@ Partial Public NotInheritable Class Sheet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
     Private Sub InitializeControls()
+        Me.Sheet1_Print_Area = Globals.Factory.CreateNamedRange(Nothing, Nothing, "Sheet1!Print_Area", "Sheet1_Print_Area", Me)
     End Sub
     
     '''
@@ -142,19 +147,28 @@ Partial Public NotInheritable Class Sheet1
     Private Function NeedsFill(ByVal MemberName As String) As Boolean
         Return Me.DataHost.NeedsFill(Me, MemberName)
     End Function
+    
+    '''
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0"),  _
+     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)>  _
+    Protected Overrides Sub OnShutdown()
+        Me.Sheet1_Print_Area.Dispose
+        MyBase.OnShutdown
+    End Sub
 End Class
 
 Partial Friend NotInheritable Class Globals
     
-    Private Shared _Sheet1 As Sheet1
+    Private Shared _Sheet2 As Sheet2
     
-    Friend Shared Property Sheet1() As Sheet1
+    Friend Shared Property Sheet2() As Sheet2
         Get
-            Return _Sheet1
+            Return _Sheet2
         End Get
         Set
-            If (_Sheet1 Is Nothing) Then
-                _Sheet1 = value
+            If (_Sheet2 Is Nothing) Then
+                _Sheet2 = value
             Else
                 Throw New System.NotSupportedException()
             End If
